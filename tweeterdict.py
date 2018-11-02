@@ -1,11 +1,15 @@
 import tweepy
 import csv
 import pandas as pd
-####input your credentials here
-consumer_key = 'GB7AYnSZX1Pb3DQdxp7xOZHZS'
-consumer_secret = 'o1ty5cPVQrCFJndkmqrZ3NeXqklXi3woXmmU4IsX8bgjFhLcyp'
-access_token = '1057180121210089472-I4kna5fxopUbNVijVrFzatAGN4SclZ'
-access_token_secret = 'H2orr1varCAE6cDT1reMyc4Bl7xAc6z0OzLJjUplrBrJW'
+
+#Getting Creds from TOKENS
+PersonalCredsRaw = open('TOKENS', 'r')
+PersonalCreds = ast.literal_eval(PersonalCredsRaw.read())
+
+consumer_key = PersonalCreds["consumer_key"]
+consumer_secret = PersonalCreds["consumer_secret"]
+access_token = PersonalCreds["access_token"]
+access_token_secret = PersonalCreds["access_token_secret"]
 
 auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_token_secret)
