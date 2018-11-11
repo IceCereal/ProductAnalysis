@@ -32,3 +32,7 @@ try:
 except Exception as e:
     print ("\tERROR\n\t", e)
     sys.exit()
+
+subr = praw.models.Subreddits(reddit=reddit,limit=5)
+ls = subr.search("Tesla")
+print (ls)
