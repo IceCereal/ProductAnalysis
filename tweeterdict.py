@@ -1,6 +1,7 @@
 import tweepy
 import csv
 import pandas as pd
+import ast
 
 #Getting Creds from TOKENS
 PersonalCredsRaw = open('TOKENS', 'r')
@@ -25,7 +26,7 @@ tweetdict = {}
 
 tweetList = []
 
-for tweet in tweepy.Cursor(api.search,q="#Tesla",count=100,lang="en",since="2017-04-03").items():
+for tweet in tweepy.Cursor(api.search,q="#Happy",count=100,lang="en",since="2017-04-03").items():
     #print (tweet.created_at, tweet.text)
     tweetDict = { 
                 'Timestamp' : tweet.created_at,
@@ -34,7 +35,11 @@ for tweet in tweepy.Cursor(api.search,q="#Tesla",count=100,lang="en",since="2017
     #tweetdict = { tweet.created_at : tweet.text.encode('utf-8')}
 
     tweetList.append(tweetDict)
+    counter+=1
 
+    if counter == 10:
+       break
+    
     
 #16453 tweets in total
 for i in tweetList :
