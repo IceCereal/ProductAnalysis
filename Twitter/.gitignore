@@ -1,0 +1,21 @@
+#Twitter Tokens
+TOKENS
+
+#Pycaches
+__pycache__/
+
+#YouTube Token
+YouTube_Creds.json
+
+#.ini files
+*.ini
+
+#.csv's
+*.csv
+
+#Other Files
+tweetsnotime.py
+ws.py
+yt.py
+yt1.py
+sentiment_YouTube.py
