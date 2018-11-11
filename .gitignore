@@ -10,6 +10,9 @@ YouTube_Creds.json
 #.ini files
 *.ini
 
+#.csv's
+*.csv
+
 #Other Files
 tweetsnotime.py
 ws.py
